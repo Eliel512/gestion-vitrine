@@ -1,4 +1,4 @@
-# Backend Node.js avec Express et Mongoose
+# APIs GESTION D'UN SITE VITRINE
 
 Ce repository contient le code source d'un backend développé avec Node.js, Express.js et Mongoose. Ce backend est conçu pour fournir des services API pour une application web ou mobile de gestion d'un site vitrine.
 
