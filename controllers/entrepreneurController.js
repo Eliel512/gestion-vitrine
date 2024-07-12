@@ -3,10 +3,21 @@ const Entrepreneur = require('../models/Entrepreneur');
 
 // Configurez le transporteur de mails
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // Utilisez le service de votre choix
+    service: process.env.EMAIL_HOST, // Utilisez le service de votre choix
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    }
+});
+
+// Vérifier la connexion
+transporter.verify(function (error, success) {
+    if (error) {
+        console.log('Erreur de connexion:', error);
+    } else {
+        console.log('Connexion réussie:', success);
     }
 });
 
