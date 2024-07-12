@@ -1,9 +1,10 @@
 const nodemailer = require('nodemailer');
 const Entrepreneur = require('../models/Entrepreneur');
+const { debug } = require('winston');
 
 // Configurez le transporteur de mails
 const transporter = nodemailer.createTransport({
-    service: process.env.EMAIL_HOST, // Utilisez le service de votre choix
+    host: process.env.EMAIL_HOST, // Utilisez le service de votre choix
     port: 465,
     secure: true,
     auth: {
